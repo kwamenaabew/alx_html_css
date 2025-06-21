@@ -1,142 +1,359 @@
+/* =========================
+   Root & Global Settings
+   ========================= */
 :root {
-  /* COLORS */
-  --primary-color: purple;
-  --secondary-color: #fafafa;
-  --text-color: rgba(0, 0, 0, 0.8);
-  --light-gray: #f5f5f5;
-  --dark-gray: #333333;
-
-  /* FONTS */
-  --font-main: 'Josefin Sans', sans-serif;
-  --font-heading: 'Yeseva One', cursive;
-
-  /* SPACING */
-  --spacing-xs: 0.25rem;   /* 4px */
-  --spacing-sm: 0.5rem;    /* 8px */
-  --spacing-md: 1rem;      /* 16px */
-  --spacing-lg: 2rem;      /* 32px */
-  --spacing-xl: 4rem;
-  --spacing-xxl: 8rem;      /* 64px */
-  --spacing-xxxl: 12rem;      
-
-  /* SIZES */
-  --max-width: 1100px;
-  --container-padding: var(--spacing-md);
-
-  /* FONT SIZES */
-  --font-xs: 0.75rem;
-  --font-sm: 0.875rem;
-  --font-md: 1rem;
-  --font-lg: 1.5rem;
-  --font-xl: 2.5rem;
-  --font-xxl: 3.5rem;
+  --main-color: #d354ec;
+  --text-color: #333;
+  --background-color: #fff;
+  --gap: 1rem;
+  --max-width: 1200px;
+  --menu-spacing: 40px;
+  --body-side-margin: 150px;
 }
 
-.container {
-    margin-left: 6rem;
-    margin-right: 6rem;
+
+
+
+/* =========================
+   Layout Structure
+   ========================= */
+body {
+  
+  display: flex;
+  flex-direction: column;
+  background-image: url(images/Object.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto; /* stretches to full width, keeps height proportional */
+  background-position: top center; /* centers it horizontally at the top */
+ 
 }
 
-.body-div {
-    background-image: url("./images/Object.png");
-    background-size: cover;
-    background-position: center;
+header {
+    /*border: 1px solid rgb(255, 38, 0);*/
+    display: flex;
+    flex-basis: calc(var(--menu-spacing) * 2);
+    justify-content: center;
+}
+
+main {
+    /*border: 1px solid yellow;*/
+    flex-basis: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer {
+    /*border: 1px solid rgb(30, 255, 0);*/
+    flex-basis: 200px;
+    color: var(--background-color);
+    background-color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* =========================
+   Navigation Section
+   ========================= */
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        /*border: 1px solid rgb(30, 255, 0);*/
+        height: 100%;
+        align-items: center;
+        flex-wrap: wrap;
+        color: aliceblue;
+        width: 65%;
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        gap: var(--menu-spacing);
+    }
+
+/* =========================
+   Banner Section
+   ========================= */
+.banner {
+    /*border: 1px solid rgb(25, 0, 255);*/
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.get-schooled {
+    /*border: 1px solid rgb(25, 0, 255);*/
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 730px;
+    justify-content: center;
+    gap: 40px;
+    color: aliceblue;
+}
+
+.get-schooled h1 {
+    font-size: 150px;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.span-words{
+    /*border: 1px solid rgb(0, 255, 55);*/
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: calc(var(--menu-spacing) * 2);
+
+}
+/* =========================
+   Pros Section
+   ========================= */
+
+.pros {
+    /*border: 1px solid rgb(0, 255, 55);*/
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 450px;
+    justify-content: center;
+    gap: var(--menu-spacing);
+    color: aliceblue;
+}
+
+.pros h2 {
+    /*border: 1px solid rgb(0, 255, 55);*/
+    width: 100%;
+    text-align: center;
+}
+
+.tutors-cards {
+    /*border: 1px solid rgb(0, 255, 55);*/
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 150px;
     height: 100%;
+    align-items: center;
 
 }
 
-.site-header {
-    margin-bottom: var(--spacing-xxl);
+.teacher-card {
+    /*border: 1px solid rgb(0, 255, 55);*/
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 150px;
+    text-align: center;  
+    
 }
 
-.hero-text {
+.teacher-card img {
+    border-radius: 50%;
+    
+}
+
+/* =========================
+   Testimonial Section
+   ========================= */
+.testimonial {
+    /*border: 1px solid rgb(255, 0, 119);*/
+    
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--menu-spacing);
+    flex-basis: 250px;
+    align-items: center;
+    color: aliceblue;
+    background-color: var(--main-color);
+}
+
+.dave img {
+    width: 150px;
+}
+
+.testimonial-quote {
+     /*border: 1px solid rgb(255, 0, 119);*/
+     display: flex;
+     flex-direction: column;
+     gap: calc(var(--menu-spacing) / 10);
+}
+
+/* =========================
+   Videos Section
+   ========================= */
+
+.videos-section {
+    /*border: 1px solid rgb(255, 0, 119);*/
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 500px;
+    justify-content: center;
+    gap: 10%;
+    
+}
+
+.videos-section h2 {
+    /*background-color: bisque;*/
+    width: 100%;
+    text-align: center;
+}
+
+.video-cards {
+   /*border: 1px solid rgb(255, 0, 119);*/
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   gap: 20px;
    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-.hero-text h1 {
-    font-size: calc(var(--font-xxl) * 2);
-
+.video-cards div {
+    
+    flex-basis: 250px;
+    
 }
 
-.hero-keywords {
-    display: flex;
-    gap: var(--spacing-xxl);
-    font-size: calc(var(--font-lg) * 1);
-    margin-bottom: var(--spacing-xl);
-}
-
-.instructors {
-    margin-top: var(--spacing-xxxl) ;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.instructor-grid {
+.phill {
     display: flex;
     flex-direction: row;
-    margin-top: var(--spacing-xl);
+    width: 100%;
+    gap: 10px;
+    color: var(--main-color);
 }
 
-/*Testimonial section */
-
-
-.testimonial-section {
-    background-color: var(--primary-color);
-    margin-top: var(--spacing-xl);
+.phill img {
+    width: 20px;
     
 }
 
-.testimonial-wrapper {
+
+/* =========================
+   Membership Section
+   ========================= */
+
+   .membership h2 {
+    width: 100%;
+    text-align: center;
+   }
+
+.membership {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items:center;
+    flex-basis: 500px;
+    justify-content: space-around;
+    color: var(--background-color);
+    background-color: var(--text-color);
+    text-align: center;
     
 }
 
-/*Videos section*/
+.members {
+    width: 100%;
+    /*border: 3px solid red;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: calc(var(--menu-spacing) * 2);
 
-.videos-section .container {
+}
 
+.member-card {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 200px;
+    align-items: center ;
+    gap: 15px;
+    
+}
+.member-card img {
+    width: 50px;
+}
+/* =========================
+   FAQ Section
+   ========================= */
+.faq {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    flex-basis: 900px;
+    justify-content: space-around;
 }
 
-.videos-section-container {
+.cols-faq {
+    width: 50%;
     display: flex;
     flex-direction: row;
-
-}
-
-.video-card {
+    justify-content: center;
+    /*border: 1px solid brown;*/
+    gap: calc(var(--menu-spacing) * 5);
+    flex-basis: 700px;
     
 }
 
-/* CTA Button*/
+.cols-faq div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex-basis: 40%;
+}
+/*
+.separate-faq {
+    background-color: aquamarine;
+    
+}
+*/
+/* =========================
+   footer Section
+   ========================= */
+footer section  {
+    /*background-color: burlywood;*/
+    width: 65%;
+    display: flex;
+    flex-direction: column;  
 
-.cta-button {
-  padding: var(--spacing-sm) var(--spacing-lg); /* space inside button */
-  background-color: var(--primary-color);       /* bright red */
+}
+
+footer section p {
+    
+    align-self: center;
+}
+/* =========================
+   Button Section
+   ========================= */
+
+
+button {
+  background-color: var(--main-color);
   color: white;
   border: none;
-  border-radius: 999px;                         /* pill shape / almost fully rounded */
-  font-size: var(--font-md);
-  font-family: var(--font-main);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.cta-button:hover {
-  background-color: #b78ac2;  /* lighter purple */
-  transform: scale(1.05);     /* slight grow */
+.purple {
+    color: var(--main-color);
 }
-
-.cta-button:active {
-  transform: scale(0.98);     /* subtle press effect */
-}
-
